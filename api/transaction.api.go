@@ -5,12 +5,17 @@ import "github.com/gin-gonic/gin"
 func SetupTransactionAPI(router *gin.Engine) {
 	transactionAPI := router.Group("/api/v2")
 	{
-		transactionAPI.POST("/send", send)
-		//productAPI.POST("/create", Create)
+		transactionAPI.GET("/transaction", transaction)
+		transactionAPI.POST("/transaction", createtransaction)
 	}
 }
 
-// Send - send api
-func send(c *gin.Context) {
-	c.JSON(401, gin.H{"result": "Send"})
+// Transaction - transaction api
+func transaction(c *gin.Context) {
+	c.JSON(401, gin.H{"result": "List Transaction"})
+}
+
+// Createtranaction - createtransaction api
+func createtransaction(c *gin.Context) {
+	c.JSON(401, gin.H{"result": "Create Transaction"})
 }
