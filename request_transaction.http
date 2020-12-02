@@ -5,5 +5,14 @@ Content-Type: application/json
 
 ### POST product
 POST http://localhost:8081/api/v2/transaction HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDY5MDg4MTUsImlkIjoyLCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoiYWRtaW4ifQ.9-XNQYM-TMvNCNrYaF399awWFbhoXU9vUGb0OJhaE5Q
 Content-Type: application/json
 
+{
+    "total": 400,
+    "paid": 2200,
+    "change": 300,
+    "payment_type": "cash",
+    "payment_detail": "full",
+    "order_list": "[]"  
+}

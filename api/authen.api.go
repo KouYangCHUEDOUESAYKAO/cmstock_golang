@@ -2,6 +2,7 @@ package api
 
 import (
 	"main/db"
+	"main/intercepter"
 	"main/model"
 	"time"
 
@@ -29,12 +30,13 @@ func login(c *gin.Context) {
 		} else if checkPasswordHash(user.Password, queryUser.Password) == false {
 			c.JSON(401, gin.H{"result": "nok", "error": "invalid password"})
 		} else {
-			c.JSON(200, gin.H{"result": "ok", "data": user})
+
+			token := intercepter.JwtSign(queryUser)
+			c.JSON(200, gin.H{"result": "ok", "token": token})
 		}
 	} else {
 		c.JSON(401, gin.H{"status": "unable to bind data"})
 	}
-
 }
 
 func checkPasswordHash(password, hash string) bool {
