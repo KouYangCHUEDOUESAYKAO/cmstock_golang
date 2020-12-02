@@ -15,6 +15,7 @@ func main() {
 	api.Setup(router)
 	router.Run(":8081")
 
+	// in case of running on Heroku
 	var port = os.Getenv("PORT")
 	if port == "" {
 		fmt.Println("No Port In Heroku")
