@@ -1,6 +1,6 @@
 ### Login
 
-POST http://localhost:8081/api/v2/login HTTP/1.1
+POST https://cmgstock.herokuapp.com/api/v2/login HTTP/1.1
 Content-Type: application/json
 
 {
